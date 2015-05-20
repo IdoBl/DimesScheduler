@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    <context:annotation-config />
+    <context:component-scan base-package="dimes.scheduler"/>
+    <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+        <property name="url" value="jdbc:mysql://dimesmysql.evergrow.iucc.ac.il:3306" />
+        <property name="username" value="codeUnlimited" />
+        <property name="password" value="superCode" />
+    </bean>
+
+    <!--
+    <bean id="rawResMainDAO" class="dimes.scheduler.dal.RawResMainDAOImpl">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    <bean id="rawResTrDAO" class="dimes.scheduler.dal.RawResTrDAOImpl">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    <bean id="asPrefixTblDAO" class="dimes.scheduler.dal.ASPrefixTblDAOImpl">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    <bean id="asEdgesDAO" class="dimes.scheduler.dal.ASEdgesDAOImpl">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    -->
+</beans>
